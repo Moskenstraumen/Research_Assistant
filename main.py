@@ -30,99 +30,79 @@ def load_config(config_path='config.json'):
 
 class RAGFlowAgent:
     """
-    Handles communication with the RAGFlow Agent using the session-based
-    /completions endpoint.
+    Handles communication with a RAGFlow Agent, following the official
+    session-based API documentation.
     """
     def __init__(self, config: dict):
         self.base_url = config['ragflow_base_url']
         self.api_key = config['ragflow_api_key']
         self.agent_id = config['keyword_agent_id']
-        self.url = f"{self.base_url}/api/v1/agents/{self.agent_id}/sessions"
         self.headers = {
             'Authorization': f'Bearer {self.api_key}',
             'Content-Type': 'application/json'
         }
 
-    def get_session_id(self) -> str:
-        """Gets a session ID from the agent."""
-        logging.info("Attempting to get a new session ID...")
-        payload = {"id": self.agent_id}
+    def _get_session_id(self) -> str:
+        """Creates a new conversation session and returns the session_id."""
+        url = f"{self.base_url}/api/v1/agents/{self.agent_id}/sessions?user_id=moskenstraumen"
         try:
-            with requests.post(self.url, headers=self.headers, json=payload, stream=True, timeout=30) as response:
-                response.raise_for_status()
-                for line in response.iter_lines():
-                    if not line:
-                        continue
-                    
-                    decoded_line = line.decode('utf-8')
-                    #
-                    # --- THIS IS THE CORRECTED LOGIC ---
-                    # Check if the line is a Server-Sent Event (SSE) message
-                    # before trying to split it.
-                    #
-                    if decoded_line.startswith('data:'):
-                        json_str = decoded_line[len('data:'):].strip()
-                        data = json.loads(json_str)
-                        if 'session_id' in data:
-                            session_id = data['session_id']
-                            logging.info(f"Successfully obtained session ID: {session_id}")
-                            return session_id
-                    else:
-                        # If it's not an SSE message, it might be a direct JSON error.
-                        try:
-                            error_data = json.loads(decoded_line)
-                            logging.error(f"RAGFlow server returned an error: {error_data.get('message', 'Unknown error')}")
-                        except json.JSONDecodeError:
-                            logging.error(f"Received a non-JSON, non-SSE line from server: {decoded_line}")
-                        return None # Stop processing on error
-
-            logging.error("Stream ended without providing a session ID.")
-            return None
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Error getting session ID: {e}")
-            return None
-
-    def get_keywords_with_session(self, query: str, session_id: str) -> list[str]:
-        """Gets keywords using a valid session ID."""
-        logging.info(f"Sending query with session ID {session_id}...")
-        payload = {
-            "id": self.agent_id,
-            "session_id": session_id,
-            "question": query,
-            "stream": False,
-            "inputs": {
-                "user_query": query
-            }
-        }
-        try:
-            response = requests.post(self.url, headers=self.headers, json=payload, timeout=60)
+            logging.info("Creating new RAGFlow conversation session...")
+            response = requests.post(url, headers=self.headers, data={})
             response.raise_for_status()
             response_data = response.json()
-            logging.debug(f"Raw agent response: {response_data}")
-
-            if isinstance(response_data, list) and len(response_data) > 0 and 'content' in response_data[0]:
-                keywords_str = response_data[0]['content']
-                keywords = [kw.strip() for kw in keywords_str.split(',') if kw.strip()]
-                logging.info(f"Extracted keywords: {keywords}")
-                return keywords
+            session_id = response_data.get('data', {}).get('id')
+            if session_id:
+                logging.info(f"Obtained session ID: {session_id}")
+                return session_id
             else:
-                logging.warning("Agent response was not in the expected format.")
+                logging.error(f"Failed to get session_id. Response: {response_data}")
                 return None
-        except requests.exceptions.RequestException as e:
-            logging.error(f"Error getting keywords: {e}")
+        except requests.RequestException as e:
+            logging.error(f"Error creating session: {e}")
+            return None
+
+    def get_keywords(self, query: str) -> list[str]:
+        """
+        Connects to the agent and prints the entire raw stream message for debugging.
+        """
+        session_id = self._get_session_id()
+        if not session_id:
+            return None
+
+        url = f"{self.base_url}/api/v1/agents/{self.agent_id}/completions"
+        payload = {
+            "id": self.agent_id,
+            "question": query,
+            "session_id": session_id,
+            "stream": True
+        }
+        
+        logging.info("Sending query and streaming response...")
+        print("--- Agent Raw Stream Response ---")
+        try:
+            with requests.post(url, headers=self.headers, json=payload, stream=True, timeout=60) as response:
+                response.raise_for_status()
+                for line in response.iter_lines():
+                    if line:
+                        # Print the raw decoded line from the stream
+                        print(line.decode('utf-8'))
+            
+            print("--- End of Stream ---")
+            # Return None because we are only printing, not extracting keywords.
+            return None
+
+        except requests.RequestException as e:
+            logging.error(f"Error getting keywords from agent: {e}")
             return None
 
 def extract_keywords_from_agent(query: str, config: dict) -> list[str]:
-    """
-    Orchestrates the two-step, session-based keyword extraction process.
-    """
+    """Orchestrates the keyword extraction process."""
     agent = RAGFlowAgent(config)
-    session_id = agent.get_session_id()
-    if session_id:
-        return agent.get_keywords_with_session(query, session_id)
-    else:
-        logging.error("Halting due to failure to obtain a session ID.")
+    keywords = agent.get_keywords(query)
+    if not keywords:
+        logging.error("Halting due to failure to extract keywords.")
         return None
+    return keywords
 
 def search_sciencedirect_for_papers(keywords: list[str], config: dict) -> list:
     """Searches the ScienceDirect database using the extracted keywords."""
