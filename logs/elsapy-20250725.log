@@ -1,0 +1,12 @@
+2025-07-25 13:08:50,396 - elsapy.elsclient - INFO - Module loaded.
+2025-07-25 13:08:50,399 - elsapy.elsentity - INFO - Module loaded.
+2025-07-25 13:08:50,399 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-25 13:08:52,587 - elsapy.utils - INFO - Module loaded.
+2025-07-25 13:08:52,587 - elsapy.elssearch - INFO - Module loaded.
+2025-07-25 13:09:28,112 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=net+energy+gain+%28Q%3E1%29+%2C+magnetic+confinement+fusion+%2C+international+collaboration+%28ITER%29
+2025-07-25 13:12:07,627 - elsapy.elsclient - INFO - Module loaded.
+2025-07-25 13:12:07,631 - elsapy.elsentity - INFO - Module loaded.
+2025-07-25 13:12:07,632 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-25 13:12:08,226 - elsapy.utils - INFO - Module loaded.
+2025-07-25 13:12:08,228 - elsapy.elssearch - INFO - Module loaded.
+2025-07-25 13:12:35,051 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=inertial+confinement+fusion+%2C+magnetic+confinement+fusion+%2C+energy+gain+%28Q+factor%29

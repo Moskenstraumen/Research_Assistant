@@ -729,3 +729,69 @@
 2025-07-24 17:20:27,422 - elsapy.elsdoc - INFO - Module loaded.
 2025-07-24 17:20:27,942 - elsapy.utils - INFO - Module loaded.
 2025-07-24 17:20:27,942 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:22:32,082 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:22:32,084 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:22:32,085 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:22:32,603 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:22:32,603 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:24:33,373 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:24:33,373 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:24:33,373 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:24:33,885 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:24:33,885 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:25:57,456 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:25:57,458 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:25:57,458 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:25:57,458 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:25:57,458 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:29:40,353 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:29:40,356 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:29:40,356 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:29:40,840 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:29:40,840 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:30:17,560 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:30:17,564 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:30:17,564 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:30:18,048 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:30:18,048 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:30:38,139 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=%22Machine+Learning%22+AND+%22Natural+Language+Processing+%28NLP%29%22+AND+%22Computer+Vision%22
+2025-07-24 17:30:58,342 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:30:58,344 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:30:58,344 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:30:58,879 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:30:58,879 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:31:32,085 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=%22Transformer+Models+%28AI%29%22+AND+%22Power+Systems+Engineering%22+AND+%22Energy+Distribution+Systems%22
+2025-07-24 17:34:46,317 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:34:46,317 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:34:46,321 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:34:46,843 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:34:46,843 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:35:12,680 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=%22Transformer+Models%22+AND+%22Electrical+Engineering+%28Power+Systems%29%22+AND+%22Applications+in+Text+Generation%2FAnalysis%22
+2025-07-24 17:47:53,093 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:47:53,093 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:47:53,093 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:47:53,597 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:47:53,597 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:48:34,246 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=Natural+Language+Processing+%28NLP%29+AND+Deep+Learning+AND+Neural+Networks
+2025-07-24 17:53:46,102 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 17:53:46,104 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 17:53:46,104 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 17:53:46,599 - elsapy.utils - INFO - Module loaded.
+2025-07-24 17:53:46,599 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 17:54:18,805 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=Transformers+%2C+Large+Language+Models+%28LLMs%29+%2C+Attention+Mechanisms
+2025-07-24 23:25:43,933 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 23:25:43,937 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 23:25:43,937 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 23:25:47,455 - elsapy.utils - INFO - Module loaded.
+2025-07-24 23:25:47,455 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 23:26:20,504 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 23:26:20,506 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 23:26:20,507 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 23:26:21,214 - elsapy.utils - INFO - Module loaded.
+2025-07-24 23:26:21,214 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 23:29:08,065 - elsapy.elsclient - INFO - Module loaded.
+2025-07-24 23:29:08,067 - elsapy.elsentity - INFO - Module loaded.
+2025-07-24 23:29:08,069 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-24 23:29:08,882 - elsapy.utils - INFO - Module loaded.
+2025-07-24 23:29:08,882 - elsapy.elssearch - INFO - Module loaded.
+2025-07-24 23:29:39,197 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=nuclear+fusion+research+%2C+inertial+confinement+fusion+%2C+magnetic+confinement+fusion
