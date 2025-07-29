@@ -35,8 +35,7 @@ class RAGFlowAgent:
 
     def get_keywords(self, query: str) -> list[str]:
         """
-        Connects to the agent, stores the entire raw stream, and then
-        extracts the final keyword answer locally.
+        Connects to the agent, stores the entire raw stream, and then extracts the final keyword answer locally.
         """
         session_id = self._get_session_id()
         if not session_id:

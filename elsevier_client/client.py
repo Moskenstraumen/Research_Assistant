@@ -92,7 +92,7 @@ if __name__ == "__main__":
     # Test paper search and download
     config = load_config()
     client = ElsevierClient(config)
-    results = client.search_papers(["nuclear fusion", "tokamak"])
+    results = client.search_papers(["llm", "tokamak"])
     if results:
         files = client.download_papers(results)
         print("Downloaded files:", files)

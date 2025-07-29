@@ -1,0 +1,42 @@
+2025-07-29 10:46:07,423 - elsapy.elsclient - INFO - Module loaded.
+2025-07-29 10:46:07,425 - elsapy.elsentity - INFO - Module loaded.
+2025-07-29 10:46:07,427 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-29 10:46:09,977 - elsapy.utils - INFO - Module loaded.
+2025-07-29 10:46:09,978 - elsapy.elssearch - INFO - Module loaded.
+2025-07-29 10:46:58,836 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=Plasma+Physics+%2C+Magnetic+Confinement+Fusion+%2C+Tritium+Breeding
+2025-07-29 10:56:34,807 - elsapy.elsclient - INFO - Module loaded.
+2025-07-29 10:56:34,808 - elsapy.elsentity - INFO - Module loaded.
+2025-07-29 10:56:34,808 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-29 10:56:35,377 - elsapy.utils - INFO - Module loaded.
+2025-07-29 10:56:35,377 - elsapy.elssearch - INFO - Module loaded.
+2025-07-29 10:56:35,809 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=nuclear+fusion+%2C+tokamak
+2025-07-29 10:57:50,200 - elsapy.elsclient - INFO - Module loaded.
+2025-07-29 10:57:50,202 - elsapy.elsentity - INFO - Module loaded.
+2025-07-29 10:57:50,203 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-29 10:57:50,765 - elsapy.utils - INFO - Module loaded.
+2025-07-29 10:57:50,765 - elsapy.elssearch - INFO - Module loaded.
+2025-07-29 10:57:51,200 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=nuclear+fusion+%2C+tokamak
+2025-07-29 11:00:14,987 - elsapy.elsclient - INFO - Module loaded.
+2025-07-29 11:00:14,989 - elsapy.elsentity - INFO - Module loaded.
+2025-07-29 11:00:14,989 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-29 11:00:15,491 - elsapy.utils - INFO - Module loaded.
+2025-07-29 11:00:15,491 - elsapy.elssearch - INFO - Module loaded.
+2025-07-29 11:00:15,987 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=nuclear+fusion+%2C+tokamak
+2025-07-29 13:33:39,130 - elsapy.elsclient - INFO - Module loaded.
+2025-07-29 13:33:39,133 - elsapy.elsentity - INFO - Module loaded.
+2025-07-29 13:33:39,133 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-29 13:33:39,844 - elsapy.utils - INFO - Module loaded.
+2025-07-29 13:33:39,844 - elsapy.elssearch - INFO - Module loaded.
+2025-07-29 13:33:40,131 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=nuclear+fusion+%2C+tokamak
+2025-07-29 14:19:29,323 - elsapy.elsclient - INFO - Module loaded.
+2025-07-29 14:19:29,328 - elsapy.elsentity - INFO - Module loaded.
+2025-07-29 14:19:29,328 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-29 14:19:30,387 - elsapy.utils - INFO - Module loaded.
+2025-07-29 14:19:30,388 - elsapy.elssearch - INFO - Module loaded.
+2025-07-29 14:19:30,397 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=nuclear+fusion+%2C+tokamak
+2025-07-29 14:32:34,304 - elsapy.elsclient - INFO - Module loaded.
+2025-07-29 14:32:34,305 - elsapy.elsentity - INFO - Module loaded.
+2025-07-29 14:32:34,305 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-29 14:32:34,846 - elsapy.utils - INFO - Module loaded.
+2025-07-29 14:32:34,846 - elsapy.elssearch - INFO - Module loaded.
+2025-07-29 14:32:35,305 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=llm+%2C+tokamak

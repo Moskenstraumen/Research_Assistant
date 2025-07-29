@@ -33,8 +33,7 @@ class RAGFlowUploader:
 
     def manage_kb_sync(self, file_paths: list[str], kb_name: str):
         """
-        Manages the full sync process: lists new files, uploads,
-        lists unparsed, parses, and lists parsed.
+        Manages the full sync process: lists new files, uploads, lists unparsed, parses, and lists parsed.
         """
         try:
             self._get_or_create_kb(kb_name)
@@ -76,7 +75,7 @@ class RAGFlowUploader:
 
             # --- 3. List unparsed documents before parsing starts ---
             logging.info("### Step 3: Checking for Unparsed Documents ###")
-            # CORRECTED: Check for 'UNSTART' status in the 'run' attribute
+            # Check for 'UNSTART' status in the 'run' attribute
             unparsed_docs = [doc for doc in all_docs if doc.run == 'UNSTART']
 
             if not unparsed_docs:
@@ -100,7 +99,7 @@ class RAGFlowUploader:
                 still_parsing_count = 0
                 for doc in current_docs:
                     if doc.id in unparsed_doc_ids:
-                        # CORRECTED: Check for completion status 'DONE' in the 'run' attribute
+                        # Check for completion status 'DONE' in the 'run' attribute
                         if doc.run != 'DONE':
                             still_parsing_count += 1
                 
@@ -109,7 +108,6 @@ class RAGFlowUploader:
                     logging.info("All documents have been parsed successfully.")
                     parsed_docs = self.dataset.list_documents()
                     for doc in parsed_docs:
-                        # CORRECTED: Use doc.run to get the final status
                         print(f"  - {doc.name} (Final Status: {doc.run})")
                     break
                 
@@ -133,16 +131,20 @@ if __name__ == "__main__":
         config = load_config()
         uploader = RAGFlowUploader(config)
         
-        # Example: Find and upload all JSON files from the configured downloads directory
+        #
+        # Search for both .json and .txt files in the downloads directory
+        # and combine them into a single list for uploading.
+        #
         import glob
         download_dir = config.get('download_directory', './downloads')
-        files_to_upload = glob.glob(os.path.join(download_dir, '*.json'))
+        json_files = glob.glob(os.path.join(download_dir, '*.json'))
+        txt_files = glob.glob(os.path.join(download_dir, '*.txt'))
+        files_to_upload = json_files + txt_files
         
         if files_to_upload:
-            # CORRECTED: Call the new manage_kb_sync function
             uploader.manage_kb_sync(files_to_upload, "test_knowledge_base")
         else:
-            print(f"No .json files found in '{download_dir}' to upload.")
+            print(f"No .json or .txt files found in '{download_dir}' to upload.")
 
     except ImportError:
         logging.warning("Could not import 'load_config' from 'utils.config'. This script will not run standalone.")
