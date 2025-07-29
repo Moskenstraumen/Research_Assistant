@@ -69,7 +69,7 @@ The system integrates with RAGFlow through two main components:
 
 1. Clone the repository:
 ```sh
-git clone [repository-url]
+git clone https://github.com/Moskenstraumen/Research_Assistant.git
 cd research-assistant
 ```
 
@@ -79,8 +79,7 @@ pip install elsapy ragflow-sdk requests
 ```
 
 3. Configure the application:
-- Copy `config.json.example` to `config.json`
-- Update the following settings:
+Copy the following settings to `config.json`
 ```json
 {
     "ragflow_api_key": "your-ragflow-api-key",
@@ -122,12 +121,3 @@ The program will:
 - All operations are logged with timestamps
 - Check the console output for progress
 - Detailed logs are available in the logging output
-
-## Error Handling
-The application includes comprehensive error handling for:
-- Configuration issues
-- API communication errors
-- File operations
-- Invalid responses
-
-Each component includes proper logging and graceful error handling to ensure stable operation.
