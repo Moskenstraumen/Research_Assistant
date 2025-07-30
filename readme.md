@@ -1,14 +1,14 @@
 # Research Assistant
 
-[![zh-Hans](https://img.shields.io/badge/lang-zh--Hans-red)](https://github.com/Moskenstraumen/Research_Assistant/blob/main/readme.zh-Hans.md)
+[![简体中文](https://img.shields.io/badge/lang-zh--Hans-red)](https://github.com/Moskenstraumen/Research_Assistant/blob/main/readme.zh-Hans.md)
 
 ## Overview
-This program extracts keywords based on user input questions through an agent based on DeepSeek-R1:70B, collects academic papers from the ScienceDirect platform, and adds them to the knowledge base after parsing. 
+This program utilizes a DeepSeek-R1:70B-based Agent to extract keywords from user query, automatically mine relevant academic papers from ScienceDirect, parse documents then construct a local knowledge base. 
 
 The workflow is:
 1. Keyword extraction from user input
-2. Retrieve relevant papers from ScienceDirect
-3. Document parsing
+2. Automatic data mining from ScienceDirect via Elsevier API
+3. Document parsing (chunking and embedding)
 4. Augmented QA via retrieval from local knowledge base
 
 ## Components

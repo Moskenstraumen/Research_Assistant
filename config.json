@@ -1,8 +1,8 @@
 {
-    "ragflow_api_key": "ragflow-M2MDkzYTkwNjdjZjExZjBhYWU2MzYwN2", 
-    "ragflow_base_url": "http://127.0.0.1:9380", 
-    "keyword_agent_id": "8513cbe467d511f0a4dc3607de39ee0c",
-    "elsevier_api_key": "51744e22558457a746f406ba7565714e",
+    "ragflow_api_key": "your-ragflow-api-key",
+    "ragflow_base_url": "your-ragflow-url",
+    "keyword_agent_id": "your-agent-id",
+    "elsevier_api_key": "your-elsevier-api-key",
     "download_directory": "./downloads",
     "max_papers_to_download": 5
 }
