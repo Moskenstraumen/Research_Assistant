@@ -100,5 +100,5 @@ if __name__ == "__main__":
     # Test keyword extraction
     config = load_config()
     agent = RAGFlowAgent(config)
-    keywords = agent.get_keywords("What are the latest advancements in llm template-based code generation?")
-    print("Extracted keywords:", keywords)
+    # keywords = agent.get_keywords("What are the latest advancements in llm template-based code generation?")
+    # print("Extracted keywords:", keywords)

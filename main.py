@@ -1,5 +1,7 @@
 import logging
 import re
+import sys
+import os
 from utils.config import load_config
 from ragflow_client.agent import RAGFlowAgent
 from ragflow_client.uploader import RAGFlowUploader
@@ -12,11 +14,20 @@ def main():
     """Main function to orchestrate the research assistant workflow."""
     logging.info("--- Automated Research Assistant Workflow ---")
     
+    # This allows the script to find the 'utils' folder if the script is run from the root directory
+    sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+    
     config = load_config()
     if not config:
         exit()
 
-    user_query = "Whats the latest advancement in nuclear fusion"
+    #
+    # The script prompt user to enter a query in the terminal
+    #
+    user_query = input("Please enter your research query (e.g., 'What are the latest advancements in...'):\n> ")
+    if not user_query.strip():
+        logging.error("No query entered. Exiting.")
+        exit()
     
     sanitized_query = re.sub(r'\W+', '_', user_query)
     kb_name = f"{sanitized_query[:50]}_KB"
@@ -44,7 +55,7 @@ def main():
         exit()
 
     # Upload to RAGFlow
-    uploader.upload_papers(downloaded_file_paths, kb_name)
+    uploader.manage_kb_sync(downloaded_file_paths, kb_name)
 
     logging.info("--- Workflow Finished ---")
     logging.info(f"Check the RAGFlow UI for the new knowledge base '{kb_name}'.")

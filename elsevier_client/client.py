@@ -89,10 +89,10 @@ if __name__ == "__main__":
     sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
     from utils.config import load_config
     
-    # Test paper search and download
+    ''' # Test paper search and download
     config = load_config()
     client = ElsevierClient(config)
     results = client.search_papers(["llm", "tokamak"])
     if results:
         files = client.download_papers(results)
-        print("Downloaded files:", files)
+        print("Downloaded files:", files) '''

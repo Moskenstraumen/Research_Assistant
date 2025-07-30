@@ -1,0 +1,6 @@
+2025-07-30 10:19:09,057 - elsapy.elsclient - INFO - Module loaded.
+2025-07-30 10:19:09,060 - elsapy.elsentity - INFO - Module loaded.
+2025-07-30 10:19:09,060 - elsapy.elsdoc - INFO - Module loaded.
+2025-07-30 10:19:11,306 - elsapy.utils - INFO - Module loaded.
+2025-07-30 10:19:11,306 - elsapy.elssearch - INFO - Module loaded.
+2025-07-30 10:20:41,697 - elsapy.elsclient - INFO - Sending GET request to https://api.elsevier.com/content/search/sciencedirect?query=Efficient+Transformer+Architectures+%2C+Mixture-of-Experts+%28MoE%29+Models+%2C+Sparse+Attention+Mechanisms+%2C+Retrieval-Augmented+Generation+%28RAG%29+%2C+Flash+Attention+Optimization

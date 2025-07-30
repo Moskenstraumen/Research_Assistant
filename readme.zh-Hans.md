@@ -1,13 +1,13 @@
 # Research Assistant
 
-This program extracts keywords based on user input questions through an agent based on DeepSeek-R1:70B, collects academic papers from the ScienceDirect platform, and adds them to the knowledge base after parsing. 
+本程序使用基于DeepSeek-R1:70B的Agent解析用户问题提取关键词，自动从ScienceDirect平台检索相关学术论文，经文本切分与处理后构建本地结构化知识库。
 
 工作流程如下：
-1. 接收用户关于研究主题的查询
-2. 使用RAGFlow的Agent提取相关关键词
-3. 在ScienceDirect平台检索匹配的论文
-4. 下载论文全文内容
-5. 将下载的论文导入RAGFlow创建知识库
+1. 解析用户问题提取关键词
+2. ScienceDirect平台论文检索并下载
+2. 对获取的论文进行文本切分与向量化
+3. 将处理后的数据存入本地向量数据库
+4. 基于该知识库实现问答服务
 
 ## 配置指南
 
@@ -51,5 +51,5 @@ pip install elsapy ragflow-sdk requests
 | `download_directory` | 论文下载路径 |
 | `max_papers_to_download` | 每次提问获取的论文数量 |
 
-![获取RAGFlow API和URL](https://github.com/Moskenstraumen/Research_Assistant/Image/RAGFlow.png)
-![Agent构建](https://github.com/Moskenstraumen/Research_Assistant/Image/Agent.png)
+![获取RAGFlow API和URL](https://github.com/Moskenstraumen/Research_Assistant/blob/main/Image/RAGFlow.png)
+![Agent构建](https://github.com/Moskenstraumen/Research_Assistant/blob/main/Image/Agent.png)
